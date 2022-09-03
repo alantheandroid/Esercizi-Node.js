@@ -6,11 +6,11 @@ function createApp() {
 
     response.statusCode = 200;
 
-    response.setHeader("Content-Type", "application/json");
+    response.setHeader("Content-Type", "text/html");
 
-    const jsonResponseBody = JSON.stringify({ location: "Mars" });
-
-    response.end(jsonResponseBody);
+    response.end(
+      "<html><body><h1>Welcome to the World Wide Web!</h1></body></html>"
+    );
   });
 }
 
