@@ -2,9 +2,14 @@
   "name": "esercizi-node",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "build": "tsc",
+    "build:dev": "tsc --watch",
+    "start": "node --enable-source-maps dist/expressServer.js",
+    "start:dev": "nodemon --watch dist/ --watch .env",
+    "listen": "curl localhost:3000/",
+    "test": "jest",
+    "dev": "npm run build && concurrently 'npm:build:dev' 'npm:start:dev'"
   },
   "repository": {
     "type": "git",
@@ -17,11 +22,27 @@
     "url": "https://github.com/alantheandroid/Esercizi-Node.js/issues"
   },
   "homepage": "https://github.com/alantheandroid/Esercizi-Node.js#readme",
-  "dependencies": {
-    "figlet": "^1.5.2"
-  },
   "devDependencies": {
-    "jest": "^29.0.1",
-    "supertest": "^6.2.4"
+    "@tsconfig/node16": "^1.0.3",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^29.0.0",
+    "@types/node": "^18.7.15",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
+    "concurrently": "^7.4.0",
+    "eslint": "^8.23.0",
+    "jest": "^29.0.2",
+    "nodemon": "^2.0.19",
+    "supertest": "^6.2.4",
+    "ts-jest": "^29.0.0-next.1",
+    "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "express-async-errors": "^3.1.1",
+    "rxjs": "^7.5.6",
+    "figlet": "^1.5.2"
   }
 }
