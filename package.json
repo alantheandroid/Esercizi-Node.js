@@ -5,10 +5,12 @@
   "scripts": {
     "build": "tsc",
     "build:dev": "tsc --watch",
+    "db:start": "sudo service postgresql start",
     "start": "node --enable-source-maps dist/server.js",
     "start:dev": "nodemon --watch dist/ --watch .env",
     "listen": "curl localhost:3000/planets",
-    "test": "jest 16_retrieve_all_resources",
+    "test": "jest",
+    "test:dev": "jest --watch",
     "dev": "npm run build && concurrently 'npm:build:dev' 'npm:start:dev'"
   },
   "repository": {
@@ -42,9 +44,12 @@
   },
   "dependencies": {
     "@prisma/client": "^4.3.1",
+    "@sinclair/typebox": "^0.24.41",
+    "ajv-formats": "^2.1.1",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",
+    "express-json-validator-middleware": "^3.0.1",
     "figlet": "^1.5.2",
     "rxjs": "^7.5.6",
     "sqlite3": "^5.0.11"
