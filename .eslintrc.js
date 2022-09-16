@@ -45,9 +45,6 @@ module.exports = {
     "@typescript-eslint/ban-ts-comment": [
       "off"
     ],
-    "@typescript-eslint/no-unused-vars": [
-      "off"
-    ],
     "@typescript-eslint/no-var-requires": [
       "off"
     ]
