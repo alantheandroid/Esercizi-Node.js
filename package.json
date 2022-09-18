@@ -10,7 +10,7 @@
     "start:dev": "nodemon --watch dist/ --watch .env",
     "listen": "curl localhost:3000/planets",
     "test": "jest",
-    "test:dev": "jest --watch",
+    "test:dev": "jest --watchAll",
     "dev": "npm run build && npm run db:start && concurrently 'npm:build:dev' 'npm:start:dev'",
     "web": "serve -p 8080 web/"
   },
