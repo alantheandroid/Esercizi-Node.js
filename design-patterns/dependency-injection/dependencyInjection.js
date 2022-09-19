@@ -1,5 +1,8 @@
 class Bike {
-  constructor() {}
+  constructor(wheel1, wheel2) {
+    this.wheel1 = wheel1;
+    this.wheel2 = wheel2;
+  }
 
   specification() {
     let message = `${this.wheel1.label} wheel diameter = ${this.wheel1.diameter}`;
@@ -19,7 +22,7 @@ class Wheel {
 const frontWheel = new Wheel("Front", 126);
 const backWheel = new Wheel("Back", 42);
 
-const bike = new Bike();
+const bike = new Bike(frontWheel, backWheel);
 
 console.log(bike);
 
